@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--coded with ♥ by Devansh-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description"
+        content="Codimaths is a edutech company focused at delivering quality education in field of vedic mathematics, coding, artificial intelligence and space science at affordable price.">
+    <meta name="keywords"
+        content="codimaths, vedic mathematics, coding, artificial intelligence, space science, python programming course, web development course, codi maths, online learning, online courses.">
+    <meta name="author" content="www.tinyurl.com/devanshtivari">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/form_style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <!-- cdn for jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!---->
+    <title>Codimaths - Register</title>
+</head>
+
+<body>
+    <section>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <div class="square" style="--i:0"></div>
+            <div class="square" style="--i:1"></div>
+            <div class="square" style="--i:2"></div>
+            <div class="square" style="--i:3"></div>
+            <div class="square" style="--i:4"></div>
+            <div class="square" style="--i:5"></div>
+            <div class="square" style="--i:6"></div>
+            <div class="container">
+                <form class="form" id="form" method="post" action="./index.php">
+                    <h2>Book a Class Now</h2>
+                    <form action="">
+                        <div class="inputBox">
+                            <input type="text" name="name" id="" placeholder="Name">
+                        </div>
+                        <div class="inputBox">
+                            <input type="email" name="email" id="" placeholder="Email Adress">
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="phone" id="" placeholder="Phone Number">
+                        </div>
+                        <div class="inputBox">
+                            <input type="number" name="age" id="" placeholder="Age">
+                        </div>
+
+                        <div class="inputBox">
+                            <input type="submit" name="submit-button" id="submit-button" value="Register">
+                        </div>
+                    </form>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    $(document).ready(function(){
+        $('#submit-button').click(function(){
+            var form = $('#form');
+            var url = form.attr('input');
+            $.ajax({
+                type: "post",
+                url: url,
+                data: $("#form input").serialize(),
+                success: function(data){
+                    console.log("Submitted data is : ",data);
+                    alert("Form submitted successfully");
+                },
+                error: function(data){
+                    alert("Failed to enter the data");
+                }
+            })
+        })
+    })
+</script>
+
+</html>
